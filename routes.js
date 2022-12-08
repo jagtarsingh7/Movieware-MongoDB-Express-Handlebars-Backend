@@ -143,7 +143,7 @@ router
 router
   .route("/movies/add/")
   .get(function (req, res) {
-    res.render("AddMovie");
+    res.render("addMovie");
   })
   // create Movie and send back all movies after creation
   .post(authenticateToken, function (req, res) {
