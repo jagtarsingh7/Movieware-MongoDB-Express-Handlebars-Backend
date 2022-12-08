@@ -17,7 +17,7 @@ function next() {
 
   console.log(page);
   page = parseInt(page) + 1;
-  window.location.replace(`http://localhost:8000/movies/all/?page=${page}`);
+  window.location.replace(`https://shy-red-camel-coat.cyclic.app/movies/all/?page=${page}`);
 }
 function prev() {
   console.log("clcscs");
@@ -30,7 +30,7 @@ function prev() {
   if (page > 0) {
     page = page - 1;
   }
-  window.location.replace(`http://localhost:8000/movies/all/?page=${page}`);
+  window.location.replace(`https://shy-red-camel-coat.cyclic.app/movies/all/?page=${page}`);
 }
 
 
