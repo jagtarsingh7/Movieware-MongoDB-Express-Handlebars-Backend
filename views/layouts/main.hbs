@@ -1,0 +1,78 @@
+<html>
+
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="/scripts/frontEnd.js"></script>
+</head>
+<body>
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"></a>
+
+      <span class="ml-3 text-xl">N01476715 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none"></rect>
+          <line x1="32" y1="64" x2="32" y2="144" fill="none" stroke="#000" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="8"></line>
+          <path d="M54.2,216a88.1,88.1,0,0,1,147.6,0" fill="none" stroke="#000" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="8"></path>
+          <polygon points="224 64 128 96 32 64 128 32 224 64" fill="none" stroke="#000" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="8"></polygon>
+          <path d="M169.3,82.2a56,56,0,1,1-82.6,0" fill="none" stroke="#000" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="8"></path>
+        </svg></span>
+      </a>
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <a href='http://localhost:8000/login' class="mr-5 hover:text-gray-900">Login</a>
+        <a href='http://localhost:8000/register' class="mr-5 hover:text-gray-900">Register</a>
+        <a href='http://localhost:8000/movies/all/?page=0' class="mr-5 hover:text-gray-900">View Movies</a>
+        <a href="http://localhost:8000/movies/search" class="mr-5 hover:text-gray-900">Search Movies</a>
+        <a href="http://localhost:8000/movies/add" class="mr-5 hover:text-gray-900">Add Movies</a>
+        <a href="http://localhost:8000/movies/delete" class="mr-5 hover:text-gray-900">Delete Movies</a>
+        <a href="http://localhost:8000/movies/update" class="mr-5 hover:text-gray-900">Edit Movies</a>
+      </nav>
+      <button onclick="prev()"
+        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Prev
+      </button>
+
+      <button onclick="next()"
+        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Next
+
+      </button>
+    </div>
+  </header>
+  <main>
+    {{{body}}}
+  </main>
+  <footer class="text-gray-600 body-font ">
+    <div class="container px-5 py-2 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <span class="ml-3 text-xl">Jagtar.singh95@yahoo.in</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022
+        Project-Jagtar —
+        <a href="https://twitter.com/humbercollege" class="text-gray-600 ml-1" rel="noopener noreferrer"
+          target="_blank">@HumberCollege</a>
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="ml-3 text-gray-500" href="https://twitter.com/humbercollege">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+            viewBox="0 0 24 24">
+            <path
+              d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+            </path>
+          </svg>
+        </a>
+        <a class="ml-3 text-gray-500" href="https://www.instagram.com/humbercollege/?hl=en ">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

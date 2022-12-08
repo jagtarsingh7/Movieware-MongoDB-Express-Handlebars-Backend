@@ -1,0 +1,36 @@
+header {
+  padding: 2px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightgrey;
+  right: 0;
+  width: 100%;
+}
+footer {
+  padding: 2px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(4, 4, 30);
+  background-color: lightgrey;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+main {
+  padding: 100px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 
+}
+.form {
+  border: 1px solid #000000;
+}
+.hid{
+ 
+    white-space:pre;
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
+}
+.hid:hover{
+  overflow:visible;
+}
