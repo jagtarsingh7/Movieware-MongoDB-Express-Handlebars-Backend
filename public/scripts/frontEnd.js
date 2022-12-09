@@ -5,6 +5,7 @@ function jwt () {
         console.log("5555"+document.getElementById("jwt").innerHTML)
         JWT=document.getElementById("jwt").innerHTML;
         localStorage.setItem("JWT", JWT);  
+        alert("saved");
         
     }
        
