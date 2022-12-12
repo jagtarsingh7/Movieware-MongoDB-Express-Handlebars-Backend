@@ -49,7 +49,7 @@ router
               res.render("loginjwt", { data: token });
 
             } else {
-              res.send("Not Allowed");
+              res.render("error");
             }
           } catch {
             res.status(500).send();
