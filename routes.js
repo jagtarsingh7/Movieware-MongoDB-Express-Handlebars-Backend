@@ -9,7 +9,7 @@ var User = require("./models/users");
 
 // Chained router route for Root Route
 router.route("/").get(function (req, res) {
-  res.render("index",{title:"welcome to the project"});
+  res.render("login");
 });
 
 router
