@@ -9,7 +9,7 @@ var User = require("./models/users");
 
 // Chained router route for Root Route
 router.route("/").get(function (req, res) {
-  res.render("login");
+  res.render("index",{title:"welcome to the project"});
 });
 
 router
@@ -49,7 +49,7 @@ router
               res.render("loginjwt", { data: token });
 
             } else {
-              res.render("error");
+              res.send("Not Allowed");
             }
           } catch {
             res.status(500).send();
@@ -143,7 +143,7 @@ router
 router
   .route("/movies/add/")
   .get(function (req, res) {
-    res.render("addMovie");
+    res.render("AddMovie");
   })
   // create Movie and send back all movies after creation
   .post(authenticateToken, function (req, res) {
@@ -152,13 +152,17 @@ router
 
     Movie.create(
       {
-        plot: req.body.plot,
-        genres: req.body.genres,
-        runtime: req.body.runtime,
-        cast: req.body.cast,
-        num_mflix_comments: req.body.comments,
+        // plot: req.body.plot,
+        // genres: req.body.genres,
+        // runtime: req.body.runtime,
+        // cast: req.body.cast,
+        // num_mflix_comments: req.body.comments,
         title: req.body.title,
-        fullplot: req.body.fullplot,
+        // fullplot: req.body.fullplot,
+        // released: req.body.released,
+        // directors: req.body.directors,
+        // awards: req.body.awards,
+        // lastupdated: req.body.lastupdated,
       },
       function (err, movie) {
         if (err) res.send(err);
