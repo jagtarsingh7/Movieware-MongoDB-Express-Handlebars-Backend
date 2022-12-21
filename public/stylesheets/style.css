@@ -96,6 +96,7 @@ animation: 0.5s draw linear forwards;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 .hid:hover{
   overflow:visible;
