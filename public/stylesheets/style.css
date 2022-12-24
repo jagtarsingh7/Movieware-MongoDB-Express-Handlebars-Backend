@@ -85,7 +85,7 @@ animation: 0.5s draw linear forwards;
 }
 
 
-.bg {
+.bg, body {
   /* The image used */
   background-image: url("../images/background.jpg");
 
