@@ -18,7 +18,7 @@ function next() {
 
   console.log(page);
   page = parseInt(page) + 1;
-  window.location.replace(`http://localhost:8000/movies/all/?page=${page}`);
+  window.location.replace(`https://shy-red-camel-coat.cyclic.app/movies/all/?page=${page}`);
 }
 function prev() {
   console.log("clcscs");
@@ -31,7 +31,7 @@ function prev() {
   if (page > 0) {
     page = page - 1;
   }
-  window.location.replace(`http://localhost:8000/movies/all/?page=${page}`);
+  window.location.replace(`https://shy-red-camel-coat.cyclic.app/movies/all/?page=${page}`);
 }
 
 
@@ -46,7 +46,7 @@ function update() {
   console.log(formData);
   console.log(titleval);
 
-  fetch(`http://localhost:8000/movies/update/${id}`, {
+  fetch(`https://shy-red-camel-coat.cyclic.app/movies/update/${id}`, {
     method: "put",
     headers: new Headers({
       Authorization:
@@ -67,7 +67,7 @@ function del() {
 
   let id = document.getElementById("value").value;
   console.log(id);
-  fetch(`http://localhost:8000/movies/delete/${id}`, {
+  fetch(`https://shy-red-camel-coat.cyclic.app/movies/delete/${id}`, {
     headers: new Headers({
       Authorization:
         "Bearer " +localStorage.getItem("JWT"),
