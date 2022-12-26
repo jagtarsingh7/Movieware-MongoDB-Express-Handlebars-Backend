@@ -184,7 +184,7 @@ router
 
 // Modify a movie                              //////////updateMovie------forum      movies
 router
-  .get("/movies/update/", function (req, res) {
+  .get("/movies/update/",authenticateToken, function (req, res) {
     res.render("updateByID");
   })
   .put("/movies/update/:id", authenticateToken, function (req, res) {
@@ -210,7 +210,7 @@ router
 
 // delete a Movie by id                          //////////deleteMovie---forumSingle      movies
 router
-  .get("/movies/delete", function (req, res) {
+  .get("/movies/delete",authenticateToken, function (req, res) {
     res.render("deleteByID");
   })
   .delete("/movies/delete/:id", authenticateToken, function (req, res) {
@@ -238,7 +238,7 @@ function authenticateToken(req, res, next) {
   if (token == null) return res.sendStatus(401);
 
   jwt.verify(token, process.env.PRIVATE_KEY, (err, user) => {
-    if (err) return res.sendStatus(403);
+    if (err) return res.render("error");
     console.log("req.user " + user);
     req.user = user;
     next();
