@@ -184,7 +184,7 @@ router
 
 // Modify a movie                              //////////updateMovie------forum      movies
 router
-  .get("/movies/update/",authenticateToken, function (req, res) {
+  .get("/movies/update/", function (req, res) {
     res.render("updateByID");
   })
   .put("/movies/update/:id", authenticateToken, function (req, res) {
@@ -210,7 +210,7 @@ router
 
 // delete a Movie by id                          //////////deleteMovie---forumSingle      movies
 router
-  .get("/movies/delete",authenticateToken, function (req, res) {
+  .get("/movies/delete", function (req, res) {
     res.render("deleteByID");
   })
   .delete("/movies/delete/:id", authenticateToken, function (req, res) {
