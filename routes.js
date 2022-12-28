@@ -233,12 +233,17 @@ router.all("*", (req, res) => {
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1];
-  console.log(token);
-  if (token == null) return res.render("error");
+  console.log("authHeader "+authHeader);
 
+  let token = authHeader && authHeader.split(" ")[1];
+  console.log("token "+token);
+  if (token ==="null")
+   {
+    console.log("here in null")
+    return res.status(401).send("Please login first");
+  } 
   jwt.verify(token, process.env.PRIVATE_KEY, (err, user) => {
-    if (err) return res.render("error");
+    if (err) return res.status(401).send("Please login first");
     console.log("req.user " + user);
     req.user = user;
     next();
