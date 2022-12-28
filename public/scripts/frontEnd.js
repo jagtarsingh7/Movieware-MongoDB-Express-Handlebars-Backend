@@ -58,9 +58,7 @@ function update() {
 
     if(res.status===401)
     {
-      const newNode = document.createTextNode("Please login First");
-      const element = document.getElementById("body");
-      element.replaceChild(newNode, element.childNodes[0]);
+        alert("Login first");
     }
 
 
@@ -88,9 +86,7 @@ function del() {
 
     if(res.status===401)
     {
-      const newNode = document.createTextNode("Please login First");
-      const element = document.getElementById("body");
-      element.replaceChild(newNode, element.childNodes[0]);
+        alert("Login first !");
     }
 
 
