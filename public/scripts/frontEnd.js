@@ -54,6 +54,16 @@ function update() {
         "Content-Type": "application/x-www-form-urlencoded",
     }),
     body: `title=${titleval}`,
+  }).then(res =>{
+
+    if(res.status===401)
+    {
+      const newNode = document.createTextNode("Please login First");
+      const element = document.getElementById("body");
+      element.replaceChild(newNode, element.childNodes[0]);
+    }
+
+
   })
 }
 
@@ -74,6 +84,16 @@ function del() {
       "Content-Type": "application/x-www-form-urlencoded",
     }),
     method: "DELETE",
+  }).then(res =>{
+
+    if(res.status===401)
+    {
+      const newNode = document.createTextNode("Please login First");
+      const element = document.getElementById("body");
+      element.replaceChild(newNode, element.childNodes[0]);
+    }
+
+
   })
     
 }
