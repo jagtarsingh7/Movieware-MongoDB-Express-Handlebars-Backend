@@ -1,14 +1,13 @@
-function jwt () {
-  var JWT="";
-    if(document.getElementById("jwt"))
-    {   
-        console.log("5555"+document.getElementById("jwt").innerHTML)
-        JWT=document.getElementById("jwt").innerHTML;
-        localStorage.setItem("JWT", JWT);  
-        alert("saved");
-        
-    }
-       
+function jwt() {
+  var JWT = "";
+  if (document.getElementById("jwt")) {
+    console.log("5555" + document.getElementById("jwt").innerHTML)
+    JWT = document.getElementById("jwt").innerHTML;
+    localStorage.setItem("JWT", JWT);
+    alert("saved");
+
+  }
+
 }
 
 function next() {
@@ -50,15 +49,14 @@ function update() {
     method: "put",
     headers: new Headers({
       Authorization:
-        "Bearer " +localStorage.getItem("JWT"),
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Bearer " + localStorage.getItem("JWT"),
+      "Content-Type": "application/x-www-form-urlencoded",
     }),
     body: `title=${titleval}`,
-  }).then(res =>{
+  }).then(res => {
 
-    if(res.status===401)
-    {
-        alert("Login first");
+    if (res.status === 401) {
+      alert("Login first");
     }
 
 
@@ -78,28 +76,23 @@ function del() {
   fetch(`https://shy-red-camel-coat.cyclic.app/movies/delete/${id}`, {
     headers: new Headers({
       Authorization:
-        "Bearer " +localStorage.getItem("JWT"),
+        "Bearer " + localStorage.getItem("JWT"),
       "Content-Type": "application/x-www-form-urlencoded",
     }),
     method: "DELETE",
-  }).then(res =>{
+  }).then(res => {
 
-    if(res.status===401)
-    {
-        alert("Login first !");
+    if (res.status === 401) {
+      alert("Login first !");
     }
 
 
   })
-
-  document.addEventListener("DOMContentLoaded", function() {
-    let shouldHideButtons = "https://shy-red-camel-coat.cyclic.app/movies/all"; 
-  
+  document.addEventListener("DOMContentLoaded", function () {
+    let shouldHideButtons = "https://shy-red-camel-coat.cyclic.app/movies/all";
     if (!window.location.href.toLowerCase().includes(shouldHideButtons)) {
-      document.getElementById("prevButton").style.display = "None";
+      document.getElementById("prevButton").style.display = "none";
       document.getElementById("nextButton").style.display = "none";
     }
   });
-  
-    
 }

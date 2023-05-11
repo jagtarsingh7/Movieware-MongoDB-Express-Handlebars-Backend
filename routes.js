@@ -9,19 +9,17 @@ var User = require("./models/users");
 
 // Chained router route for Root Route
 router.route("/").get(function (req, res) {
-  res.render("index",{title:"welcome to the project"});
+  res.render("index", { title: "Welcome to the Movie Information Web App!" });
 });
 
 router
-  .get("/login",function (req, res) {
+  .get("/login", function (req, res) {
     res.render("login");
   })
   .post("/loginjwt",
     (req, res, next) => {
       check(req.body.email).isEmail().run(req);
       check(req.body.password).isLength({ min: 6 }).run(req);
-      console.log(req.body.password)
-
       const result = validationResult(req);
       if (!result.isEmpty()) {
         return res.status(400).json({ errors: result.array() });
@@ -66,8 +64,7 @@ router
   })
   .post(
     (req, res, next) => {
-      console.log(req.body.name);
-      console.log(req.body.password);
+     
       check("email").isEmail().run(req);
       check("password").isLength({ min: 6 }).run(req);
 
@@ -104,7 +101,7 @@ router
     }
   );
 
-//get all Movie data from db     /////movies
+//get all Movie data from db     
 router.route("/movies/all/").get(function (req, res) {
   // use mongoose to get all todos in the database
   let number = req.query.page;
@@ -120,13 +117,13 @@ router.route("/movies/all/").get(function (req, res) {
     });
 });
 
-// get a Movie with title.   /////// searchbytitle---------------forumSingle and movies
+// get a Movie with title.   
 router
   .route("/movies/search/")
   .get(function (req, res) {
     res.render("searchByTitle"); // return all books in JSON format
   })
-  .post( function (req, res) {
+  .post(function (req, res) {
     let title = req.body.title;
     Movie.find({ title: { $regex: title } })
       .lean()
@@ -135,11 +132,10 @@ router
         if (err) res.send(err);
         //res.send(movies);
         res.render("movies", { data: movies });
-        console.log(movies); // return all movies
       });
   });
 
-//add a movie                     //////////addMovie ---------forum      movies
+//add a movie                     
 router
   .route("/movies/add/")
   .get(function (req, res) {
@@ -182,7 +178,7 @@ router
     );
   });
 
-// Modify a movie                              //////////updateMovie------forum      movies
+// Modify a movie                              
 router
   .get("/movies/update/", function (req, res) {
     res.render("updateByID");
@@ -233,15 +229,14 @@ router.all("*", (req, res) => {
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
-  console.log("authHeader "+authHeader);
+  console.log("authHeader " + authHeader);
 
   let token = authHeader && authHeader.split(" ")[1];
-  console.log("token "+token);
-  if (token ==="null")
-   {
+  console.log("token " + token);
+  if (token === "null") {
     console.log("here in null")
     return res.status(401).send("Please login first");
-  } 
+  }
   jwt.verify(token, process.env.PRIVATE_KEY, (err, user) => {
     if (err) return res.status(401).send("Please login first");
     console.log("req.user " + user);
