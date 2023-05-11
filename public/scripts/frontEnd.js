@@ -91,5 +91,15 @@ function del() {
 
 
   })
+
+  document.addEventListener("DOMContentLoaded", function() {
+    let shouldHideButtons = "https://shy-red-camel-coat.cyclic.app/movies/all"; 
+  
+    if (!window.location.href.toLowerCase().includes(shouldHideButtons)) {
+      document.getElementById("prevButton").style.display = "None";
+      document.getElementById("nextButton").style.display = "none";
+    }
+  });
+  
     
 }

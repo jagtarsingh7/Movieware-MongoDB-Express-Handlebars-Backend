@@ -8,63 +8,57 @@
     <script src="/scripts/frontEnd.js"></script>
   </head>
   <body>
-    <header class="text-gray-600 body-font">
-      <div
-        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
-      >
-        <a
-          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
-        ></a>
+<header class="fixed top-0 left-0 right-0 z-10 text-gray-600 body-font transition duration-500 ease-in-out">
+    <div class="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 500 500"
+          style="enable-background:new 0 0 500 500" xml:space="preserve">
+          <style>
+            .st0 {
+              fill: #aab1ba
+            }
 
-        <a class="ml-3 text-xl">
-          <div class="svg-wrapper"> 
-           <div class="text cc">Handlebars-MERN</div>
-          </div>
-        </a>
-        <nav
-          class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
-        >
-          <a
-            href="https://shy-red-camel-coat.cyclic.app/login"
-            class="mr-5 hover:text-gray-900"
-          >Login</a>
-          <a
-            href="https://shy-red-camel-coat.cyclic.app/register"
-            class="mr-5 hover:text-gray-900"
-          >Register</a>
-          <a
-            href="https://shy-red-camel-coat.cyclic.app/movies/all/?page=0"
-            class="mr-5 hover:text-gray-900"
-          >View Movies</a>
-          <a
-            href="https://shy-red-camel-coat.cyclic.app/movies/search"
-            class="mr-5 hover:text-gray-900"
-          >Search Movies</a>
-   
-          <a
-            href="https://shy-red-camel-coat.cyclic.app/movies/delete"
-            class="mr-5 hover:text-gray-900"
-          >Delete Movies</a>
-          <a
-            href="https://shy-red-camel-coat.cyclic.app/movies/update"
-            class="mr-5 hover:text-gray-900"
-          >Edit Movies</a>
-        </nav>
-        <div class="text-center lg:text-left"><button
-          onclick="prev()"
-          class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-        >Prev
-        </button></div>
+            .st2 {
+              fill: #ecf4f7
+            }
+          </style>
+          <path class="st0"
+            d="M102.466 430.634h-59.79c-7.029 0-12.727-5.698-12.727-12.727s5.698-12.727 12.727-12.727h59.79a6.2 6.2 0 0 1 6.2 6.2v13.053a6.2 6.2 0 0 1-6.2 6.201z" />
+          <circle cx="194.052" cy="417.907" r="25.446" style="fill:#fddf7f" />
+          <path class="st2"
+            d="M194.052 443.353h-.002c-4.26 0-8.273-1.053-11.8-2.904V495h23.605v-54.551a25.333 25.333 0 0 1-11.8 2.904h-.003z" />
+          <path class="st0"
+            d="M462.203 228.447H351.952v-18.225c0-6.875-5.573-12.448-12.448-12.448H226.135v-53.805H339.97a7.716 7.716 0 0 0 7.716-7.716V89.59a7.716 7.716 0 0 0-7.716-7.716H167.208c-3.141 0-5.348 3.092-4.329 6.063l18.175 52.942a4.577 4.577 0 0 0 4.329 3.091h16.668v53.805H74.607c-14.761 0-26.727 11.966-26.727 26.727v112.52c0 14.761 11.966 26.727 26.727 26.727h57.904v19.009c0 5.359 4.344 9.704 9.704 9.704H245.89c5.359 0 9.704-4.345 9.704-9.704v-19.009h83.91c6.875 0 12.448-5.573 12.448-12.448v-18.224h110.251a7.847 7.847 0 0 0 7.847-7.847v-88.935a7.847 7.847 0 0 0-7.847-7.848z" />
+          <path
+            d="M418.565 254.692a3.91 3.91 0 0 1 3.91 3.91v44.318a3.91 3.91 0 0 1-3.91 3.91h-44.494a3.91 3.91 0 0 1-3.91-3.91v-44.318a3.91 3.91 0 0 1 3.91-3.91h44.494z"
+            style="fill:#83e1e5" />
+          <circle class="st2" cx="107.065" cy="280.761" r="19.404" />
+          <path
+            d="M216.907 16.535a5 5 0 0 1 5-5h6.535V5a5 5 0 0 1 10 0v6.535h6.534a5 5 0 0 1 0 10h-6.534v6.534a5 5 0 0 1-10 0v-6.534h-6.535a5 5 0 0 1-5-5zm191.817 161.74h6.534v6.535a5 5 0 1 0 10 0v-6.535h6.534a5 5 0 1 0 0-10h-6.534v-6.535a5 5 0 1 0-10 0v6.535h-6.534a5 5 0 1 0 0 10zm66.326 58.019v88.935c0 7.084-5.763 12.847-12.847 12.847H356.951V351.3c0 9.621-7.827 17.448-17.447 17.448h-78.91v14.009c0 8.107-6.597 14.704-14.704 14.704h-29.297c4.91 5.408 7.906 12.584 7.906 20.446 0 10.581-5.429 19.915-13.644 25.373V490h117.603a5 5 0 1 1 0 10H157.711a5 5 0 0 1 0-10h19.539v-46.72c-6.893-4.58-11.818-11.888-13.226-20.373h-50.357v1.526c0 6.176-5.024 11.2-11.2 11.2h-59.79c-9.775 0-17.727-7.952-17.727-17.727s7.952-17.727 17.727-17.727h59.79c6.176 0 11.2 5.024 11.2 11.2v1.527h50.357a30.36 30.36 0 0 1 7.489-15.446h-29.297c-8.107 0-14.704-6.596-14.704-14.704v-14.009H74.607c-17.494 0-31.727-14.233-31.727-31.727V224.5c0-17.494 14.233-31.727 31.727-31.727h122.444v-43.805h-11.668a9.578 9.578 0 0 1-9.058-6.467L158.151 89.56c-1.002-2.919-.53-6.163 1.264-8.675s4.707-4.012 7.794-4.012H339.97c7.011 0 12.715 5.704 12.715 12.716v46.664c0 7.011-5.704 12.715-12.715 12.715H231.135v43.805h108.369c9.62 0 17.447 7.827 17.447 17.448v13.225H462.203c7.084.001 12.847 5.764 12.847 12.848zM103.667 411.38c0-.662-.539-1.2-1.2-1.2h-59.79c-4.261 0-7.727 3.466-7.727 7.727 0 4.26 3.466 7.727 7.727 7.727h59.79c.662 0 1.2-.539 1.2-1.2V411.38zm271.494-161.688h43.328l15.817-16.245h-56.298a2.85 2.85 0 0 0-2.848 2.847v13.398zm0 52.139h42.314v-42.139h-42.314v42.139zm-79.145-165.578a2.719 2.719 0 0 0 2.716 2.715h41.238a2.718 2.718 0 0 0 2.715-2.715V89.59a2.718 2.718 0 0 0-2.715-2.716h-41.238a2.72 2.72 0 0 0-2.716 2.716v46.663zm-93.965 2.716h84.256c-.005-.024-.007-.05-.012-.074-.06-.284-.1-.576-.141-.867-.021-.146-.051-.288-.067-.435-.046-.44-.072-.887-.072-1.339V89.59c0-.453.026-.899.072-1.339.016-.148.047-.292.067-.439.041-.29.081-.58.141-.863l.012-.075H167.801l17.884 52.095h16.366zm5 10v43.805h14.083v-43.805h-14.083zm-74.54 209.779h97.601a17.346 17.346 0 0 1-1.67-7.448V210.222c0-2.663.599-5.188 1.671-7.448H74.607c-11.98 0-21.727 9.747-21.727 21.727v112.52c0 11.98 9.747 21.727 21.727 21.727h57.904zm68.343 88.829c-2.189.502-4.464.776-6.802.776s-4.613-.274-6.802-.776V490h13.604v-42.423zm13.645-29.67c0-11.274-9.172-20.446-20.446-20.446s-20.446 9.172-20.446 20.446 9.172 20.446 20.446 20.446 20.446-9.172 20.446-20.446zm36.095-49.159H137.511v14.009a4.71 4.71 0 0 0 4.704 4.704H245.89a4.71 4.71 0 0 0 4.704-4.704v-14.009zm96.357-31.61a13.184 13.184 0 0 1-4.253-2.745l-21.563-20.716a6.591 6.591 0 0 0-4.586-1.846h-43.834a5 5 0 1 1 0-10h11.27v-42.139h-11.27a5 5 0 1 1 0-10h43.834a6.591 6.591 0 0 0 4.586-1.846l21.563-20.717a13.184 13.184 0 0 1 4.253-2.745v-14.162c0-4.107-3.341-7.448-7.447-7.448H245.89c-4.107 0-7.448 3.341-7.448 7.448V351.3c0 4.107 3.341 7.448 7.448 7.448h93.614c4.106 0 7.447-3.341 7.447-7.448v-14.162zm-52.966-77.446v42.139h12.146v-42.139h-12.146zm71.176 65.537v-88.935c0-.979.12-1.93.329-2.847h-13.643c-.832 0-1.621.317-2.221.894l-21.563 20.717a16.538 16.538 0 0 1-11.514 4.635h-.419v42.139h.419c4.314 0 8.403 1.646 11.514 4.635l21.563 20.716a3.19 3.19 0 0 0 2.221.894h13.643a12.812 12.812 0 0 1-.329-2.848zm69.146 2.847-15.817-16.245h-43.329v13.398a2.85 2.85 0 0 0 2.848 2.847h56.298zm30.743-91.782a2.85 2.85 0 0 0-2.847-2.847h-13.94l-21.388 21.966c.382.992.6 2.064.6 3.189v44.318a8.844 8.844 0 0 1-.6 3.189l21.387 21.966h13.94a2.85 2.85 0 0 0 2.847-2.847v-88.934zM351.951 490h-6.742a5 5 0 1 0 0 10h6.742a5 5 0 1 0 0-10zM82.662 280.761c0-13.457 10.947-24.404 24.403-24.404 13.457 0 24.404 10.947 24.404 24.404 0 13.456-10.947 24.403-24.404 24.403-13.456.001-24.403-10.947-24.403-24.403zm10 0c0 7.942 6.461 14.403 14.403 14.403s14.404-6.461 14.404-14.403-6.461-14.404-14.404-14.404c-7.942 0-14.403 6.462-14.403 14.404zm101.967 132.146h-1.153a5 5 0 0 0 0 10h1.153a5 5 0 0 0 0-10zM182.25 229.578H87.662a5 5 0 0 0 0 10h94.588a5 5 0 0 0 0-10zm23.604 0h-6.117a5 5 0 0 0 0 10h6.117a5 5 0 0 0 0-10zm-23.604 92.366H87.662a5 5 0 0 0 0 10h94.588a5 5 0 0 0 0-10zm23.604 0h-6.117a5 5 0 0 0 0 10h6.117a5 5 0 0 0 0-10z"
+            style="fill:#1c1d21" />
+        </svg>
+        <span class="ml-3 text-xl">MEHN APP</span>
+      </a>
 
-        <button
-          onclick="next()"
-          
-          class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-        >Next
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <a href="https://shy-red-camel-coat.cyclic.app/login" class="mr-5 hover:text-gray-900">Login</a>
+        <a href="https://shy-red-camel-coat.cyclic.app/register" class="mr-5 hover:text-gray-900">Register</a>
+        <a href="https://shy-red-camel-coat.cyclic.app/movies/all/?page=0" class="mr-5 hover:text-gray-900">View
+          Movies</a>
+        <a href="https://shy-red-camel-coat.cyclic.app/movies/search" class="mr-5 hover:text-gray-900">Search Movies</a>
+        <a href="https://shy-red-camel-coat.cyclic.app/movies/delete" class="mr-5 hover:text-gray-900">Delete Movies</a>
+        <a href="https://shy-red-camel-coat.cyclic.app/movies/update" class="mr-5 hover:text-gray-900">Edit Movies</a>
+      </nav>
 
-        </button>
+      <div class="flex flex-row-reverse items-center justify-center text-center lg:text-left">
+        <button onclick="prev()" id="prevButton"
+          class="btn-blue border border-black-600 rounded-md px-4 py-2 text-black hover:bg-blue-200 hover:border-gray-700 hover:text-black-100 mr-4 animate-pulse">Prev</button>
+        <button onclick="next()" id="nextButton"
+          class="btn-blue border border-black-600 rounded-md px-4 py-2 text-black hover:bg-blue-200 hover:border-gray-700 hover:text-black-100 animate-pulse">Next</button>
       </div>
-    </header>
+
+    </div>
+  </header>
     <main class="w3-container w3-center w3-animate-left w3-animate-fading bg">
       {{{body}}}
     </main>
