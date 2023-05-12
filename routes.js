@@ -31,10 +31,6 @@ router
       let email = req.body.email;
       let password = req.body.pass;
 
-      console.log("email",email)
-     
-
-
       User.find({ email: email })
         .lean()
         .exec(async function (err, user) {
@@ -68,7 +64,6 @@ router
   })
   .post(
     (req, res, next) => {
-      console.log("req.body.name",req.body.name)
       check("email").isEmail().run(req);
       check("password").isLength({ min: 6 }).run(req);
 
@@ -84,8 +79,6 @@ router
       let salt = await bcrypt.genSalt();
       let hashedPassword = await bcrypt.hash(req.body.password, salt);
      
-
-      console.log("hashedPassword",hashedPassword)
       User.create(
         {
           name: req.body.name,
@@ -191,15 +184,12 @@ router
     // create mongose method to update an existing record into collection
 
     let id = req.params.id;
-    console.log(id);
     var data = {
       title: req.body.title,
     };
-    console.log(data);
 
     // save the user
     Movie.findByIdAndUpdate(id, data, function (err, m) {
-      console.log("sdsds");
       if (err) {
         throw err;
       } else {
@@ -215,7 +205,7 @@ router
   })
   .delete("/movies/delete/:id", authenticateToken, function (req, res) {
     let id = req.params.id;
-    console.log(id);
+    console.log("id-->",id)
     Movie.remove(
       {
         _id: id,

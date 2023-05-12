@@ -69,12 +69,10 @@ function next() {
   window.location.replace(`https://shy-red-camel-coat.cyclic.app/movies/all/?page=${page}`);
 }
 function prev() {
-  console.log("prev clicked");
   var url_string = window.location.href;
   var url = new URL(url_string);
   var page = url.searchParams.get("page");
 
-  console.log(page);
   page = parseInt(page);
   if (page > 0) {
     page = page - 1;
@@ -91,8 +89,7 @@ function update() {
   const titleval = document.getElementById("titleValue").value;
   const formData = new FormData();
   formData.append("title", titleval);
-  console.log(formData);
-  console.log(titleval);
+ 
 
   fetch(`https://shy-red-camel-coat.cyclic.app/movies/update/${id}`, {
     method: "put",
@@ -107,6 +104,10 @@ function update() {
     if (res.status === 401) {
       alert("Login first");
     }
+    if (res.status === 200) {
+      alert("Successfully changed");
+    }
+
 
 
   })
@@ -129,8 +130,13 @@ function del() {
     method: "DELETE",
   }).then(res => {
 
+    console.log(res)
+
     if (res.status === 401) {
-      alert("Login first !");
+      alert("Please login first!");
+    }
+    if (res.status === 200) {
+      alert("Successfully deleted!");
     }
 
 
