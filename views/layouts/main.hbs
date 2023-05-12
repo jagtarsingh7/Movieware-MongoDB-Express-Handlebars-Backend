@@ -1,15 +1,16 @@
 <html>
 
-  <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <script src="/scripts/frontEnd.js"></script>
-  </head>
-  <body>
-<header class="fixed top-0 left-0 right-0 z-10 text-gray-600 body-font transition duration-500 ease-in-out">
-    <div class="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="/scripts/frontEnd.js"></script>
+</head>
+
+<body>
+  <header class=" bg-blue-100 fixed top-0 left-0 right-0 z-10 text-gray-600 body-font transition duration-500 ease-in-out">
+    <div class="mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
       <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 500 500"
           style="enable-background:new 0 0 500 500" xml:space="preserve">
@@ -41,82 +42,56 @@
       </a>
 
       <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-        <a href="https://shy-red-camel-coat.cyclic.app/login" class="mr-5 hover:text-gray-900">Login</a>
-        <a href="https://shy-red-camel-coat.cyclic.app/register" class="mr-5 hover:text-gray-900">Register</a>
-        <a href="https://shy-red-camel-coat.cyclic.app/movies/all/?page=0" class="mr-5 hover:text-gray-900">View
+        <a href="https://shy-red-camel-coat.cyclic.app/login" class="mr-5 hover:shadow-lg hover:text-gray-900">Login</a>
+        <a href="https://shy-red-camel-coat.cyclic.app/register" class="mr-5 hover:shadow-lg hover:text-gray-900">Register</a>
+        <a href="https://shy-red-camel-coat.cyclic.app/movies/all/?page=0" class="mr-5 hover:shadow-lg hover:text-gray-900">View
           Movies</a>
-        <a href="https://shy-red-camel-coat.cyclic.app/movies/search" class="mr-5 hover:text-gray-900">Search Movies</a>
-        <a href="https://shy-red-camel-coat.cyclic.app/movies/delete" class="mr-5 hover:text-gray-900">Delete Movies</a>
-        <a href="https://shy-red-camel-coat.cyclic.app/movies/update" class="mr-5 hover:text-gray-900">Edit Movies</a>
+        <a href="https://shy-red-camel-coat.cyclic.app/movies/search" class="mr-5 hover:shadow-lg hover:text-gray-900">Search Movies</a>
+        <a href="https://shy-red-camel-coat.cyclic.app/movies/delete" class="mr-5 hover:shadow-lg hover:text-gray-900">Delete Movies</a>
+        <a href="https://shy-red-camel-coat.cyclic.app/movies/update" class="mr-5 hover:shadow-lg hover:text-gray-900">Edit Movies</a>
       </nav>
 
       <div class="flex flex-row-reverse items-center justify-center text-center lg:text-left">
-        <button onclick="prev()" id="prevButton"
-          class="btn-blue border border-black-600 rounded-md px-4 py-2 text-black hover:bg-blue-200 hover:border-gray-700 hover:text-black-100 mr-4 animate-pulse">Prev</button>
+       
         <button onclick="next()" id="nextButton"
-          class="btn-blue border border-black-600 rounded-md px-4 py-2 text-black hover:bg-blue-200 hover:border-gray-700 hover:text-black-100 animate-pulse">Next</button>
+          class="btn-blue hover:shadow-lg border border-black-800 rounded-md px-4 py-2 text-black hover:bg-blue-200 hover:border-gray-700 hover:text-black-100 animate-pulse">Next</button>
+           <button onclick="prev()" id="prevButton"
+          class="btn-blue hover:shadow-lg border border-black-800 rounded-md px-4 py-2 text-black hover:bg-blue-200 hover:border-gray-700 hover:text-black-100 mr-4 animate-pulse">Prev</button>
       </div>
 
     </div>
   </header>
-    <main class="w3-container w3-center w3-animate-left w3-animate-fading bg">
-      {{{body}}}
-    </main>
-    <footer class="text-gray-600 body-font">
-      <div
-        class="container px-5 py-2 mx-auto flex items-center sm:flex-row flex-col"
-      >
-        <a
-          class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
-        >
-          <span class="ml-3 text-xl">Jagtar.singh95@yahoo.in</span>
+  <main class=" w3-container w3-center w3-animate-left w3-animate-fading mt-24 mb-24">
+    {{{body}}}
+  </main>
+  <footer class="bg-blue-100 text-gray-600 body-font">
+    <div class="container px-5 py-2 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <span class="ml-3 text-xl">Jagtar.singh95@yahoo.in</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
+        Project-Jagtar
+        <a href="https://twitter.com/" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank"></a>
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="ml-3 text-gray-500" href="https://twitter.com/">
+          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+            viewBox="0 0 24 24">
+            <path
+              d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+            </path>
+          </svg>
         </a>
-        <p
-          class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"
-        >© Project-Jagtar
-          <a
-            href="https://twitter.com/"
-            class="text-gray-600 ml-1"
-            rel="noopener noreferrer"
-            target="_blank"
-          ></a>
-        </p>
-        <span
-          class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
-        >
-          <a class="ml-3 text-gray-500" href="https://twitter.com/">
-            <svg
-              fill="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-              >
-              </path>
-            </svg>
-          </a>
-          <a class="ml-3 text-gray-500" href="https://www.instagram.com/">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-              <path
-                d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
-              ></path>
-            </svg>
-          </a>
-        </span>
-      </div>
-    </footer>
-  </body>
+        <a class="ml-3 text-gray-500" href="https://www.instagram.com/">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-5 h-5" viewBox="0 0 24 24">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+</body>
+
 </html>

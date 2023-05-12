@@ -1,8 +1,20 @@
 
-<div class="form">
-  <input id="value" class="form" type="text" name="id" placeholder="id" ><br><br>
-    <input id="titleValue" class="form" type="text" name="title" placeholder="title" ><br><br>
 
-  <button class="form" type="button" onclick=update()>Submit</button>
-  <p id="result"></p>
+<div
+  class="form flex flex-col items-center justify-center bg-white-300 p-6  rounded-lg hover:shadow-xl border border-gray-500 ">
+
+  <label class="text-lg font-bold mb-2">Please enter the ID of the movie and Title that you want to update:</label>
+  <input id="value"
+    class="input my-2 p-3  rounded-lg border border-black-700 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition-all duration-300"
+    type="text" name="id" placeholder="ID">
+    <input id="titleValue"
+    class="input my-2 p-3  rounded-lg border border-black-700 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition-all duration-300"
+    type="text" name="title" placeholder="Title">
+  <button
+    class=" form button py-3 px-4 mt-4 rounded-lg shadow-md text-white bg-indigo-500 hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105"
+    type="button" onclick="del()">
+    <span id="submitBtnText">Submit</span>
+  </button>
+  <p id="result" class="text-red-500 mt-4"></p>
+
 </div>

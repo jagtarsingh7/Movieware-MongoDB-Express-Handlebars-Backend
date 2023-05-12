@@ -1,14 +1,63 @@
-function jwt() {
-  var JWT = "";
-  if (document.getElementById("jwt")) {
-    console.log("5555" + document.getElementById("jwt").innerHTML)
-    JWT = document.getElementById("jwt").innerHTML;
-    localStorage.setItem("JWT", JWT);
-    alert("saved");
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+  let v = "https://shy-red-camel-coat.cyclic.app/"
+
+  let shouldHideButtons = `${v}movies/all`;
+  if (!window.location.href.toLowerCase().includes(shouldHideButtons)) {
+    document.getElementById("prevButton").style.display = "none";
+    document.getElementById("nextButton").style.display = "none";
+  }
+  let saveJwt = `${v}login`;
+
+  if (window.location.href.toLowerCase().includes(saveJwt)) {
+    document.getElementById("loginform").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const data = {
+        email: document.getElementById("email").value,
+        pass: document.getElementById("password").value
+
+      };
+
+      const urlEncodedData = new URLSearchParams(data).toString();
+      // Do something here when the submit button is clicked
+      fetch(`${v}loginjwt`, {
+
+
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: urlEncodedData
+      })
+        .then(res => res.json())
+        .then(token => {
+
+
+          localStorage.setItem("JWT", token);
+          alert("success");
+          window.location.replace(`${v}movies/all/?page=${0}`);
+
+        })
+        .catch(error => {
+          console.error(error);
+          alert("error");
+        });
+    });
 
   }
 
+
+
+});
+
+function loginBack() {
+
+  window.location.replace("https://shy-red-camel-coat.cyclic.app/login");
 }
+
 
 function next() {
   var url_string = window.location.href;
@@ -20,7 +69,7 @@ function next() {
   window.location.replace(`https://shy-red-camel-coat.cyclic.app/movies/all/?page=${page}`);
 }
 function prev() {
-  console.log("clcscs");
+  console.log("prev clicked");
   var url_string = window.location.href;
   var url = new URL(url_string);
   var page = url.searchParams.get("page");
@@ -64,8 +113,6 @@ function update() {
 }
 
 
-
-
 function del() {
   console.log("del");
 
@@ -88,11 +135,6 @@ function del() {
 
 
   })
-  document.addEventListener("DOMContentLoaded", function () {
-    let shouldHideButtons = "https://shy-red-camel-coat.cyclic.app/movies/all";
-    if (!window.location.href.toLowerCase().includes(shouldHideButtons)) {
-      document.getElementById("prevButton").style.display = "none";
-      document.getElementById("nextButton").style.display = "none";
-    }
-  });
+
+
 }

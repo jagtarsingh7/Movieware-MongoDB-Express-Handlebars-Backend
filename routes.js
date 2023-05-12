@@ -9,7 +9,7 @@ var User = require("./models/users");
 
 // Chained router route for Root Route
 router.route("/").get(function (req, res) {
-  res.render("index", { title: "Welcome to the Movie Information Web App!" });
+  res.render("index", { title: "Welcome!" });
 });
 
 router
@@ -29,7 +29,11 @@ router
     (req, res) => {
       // Handle the request somehow
       let email = req.body.email;
-      let password = req.body.password;
+      let password = req.body.pass;
+
+      console.log("email",email)
+     
+
 
       User.find({ email: email })
         .lean()
@@ -37,14 +41,14 @@ router
           // if there is an error retrieving, send the error otherwise send data
           if (err) res.send(err);
           try {
-            console.log(user[0].password);
 
             if (await bcrypt.compare(password, user[0].password)) {
               let payload = {
                 name: user[0].name,
               };
               let token = jwt.sign(payload, process.env.PRIVATE_KEY);
-              res.render("loginjwt", { data: token });
+
+              res.json(token);
 
             } else {
               res.send("Not Allowed");
@@ -64,7 +68,7 @@ router
   })
   .post(
     (req, res, next) => {
-     
+      console.log("req.body.name",req.body.name)
       check("email").isEmail().run(req);
       check("password").isLength({ min: 6 }).run(req);
 
@@ -76,9 +80,12 @@ router
     },
     async (req, res) => {
       // Handle the request 
-
+     
       let salt = await bcrypt.genSalt();
       let hashedPassword = await bcrypt.hash(req.body.password, salt);
+     
+
+      console.log("hashedPassword",hashedPassword)
       User.create(
         {
           name: req.body.name,
@@ -94,7 +101,7 @@ router
               // if there is an error retrieving, send the error otherwise send data
               if (err) res.send(err);
 
-              res.send("Sucessfully created ! Now go back to login")
+              res.render("moveLogin")
             });
         }
       );
@@ -113,7 +120,6 @@ router.route("/movies/all/").get(function (req, res) {
       // if there is an error retrieving, send the error otherwise send data
       if (err) res.send(err);
       res.render("movies", { data: movies });
-      console.log(movies); // return all movies
     });
 });
 
@@ -144,7 +150,6 @@ router
   // create Movie and send back all movies after creation
   .post(authenticateToken, function (req, res) {
     // create mongose method to create a new record into collection
-    console.log(req.body);
 
     Movie.create(
       {
@@ -172,7 +177,6 @@ router
             if (err) res.send(err);
             //res.send(movies);
             res.render("movies", { data: movies });
-            console.log(movies); // return all movies
           });
       }
     );
@@ -229,17 +233,13 @@ router.all("*", (req, res) => {
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
-  console.log("authHeader " + authHeader);
 
   let token = authHeader && authHeader.split(" ")[1];
-  console.log("token " + token);
   if (token === "null") {
-    console.log("here in null")
     return res.status(401).send("Please login first");
   }
   jwt.verify(token, process.env.PRIVATE_KEY, (err, user) => {
     if (err) return res.status(401).send("Please login first");
-    console.log("req.user " + user);
     req.user = user;
     next();
   });
